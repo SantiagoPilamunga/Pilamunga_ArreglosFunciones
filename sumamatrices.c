@@ -22,6 +22,17 @@ void resultado(int n, int m, int matrix[n][m], int matrix2[n][m], int suma[n][m]
         }
     }
 }
+void mostrar(int n,int m,int matriz[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("%d \t", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
 int main()
 {
     int n, m;
