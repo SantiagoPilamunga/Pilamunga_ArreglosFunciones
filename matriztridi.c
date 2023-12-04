@@ -3,17 +3,26 @@ void asignar(int l,int n,int m,int matriz[l][n][m])
 {
     for (int k = 0; k < l; k++)
     {
-        for (int i = 0; i < n; i++)
+        if (k == l-1)
+        {
+            for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < m; j++)
             {
-                matriz[k][i][j]=0;
+                matriz[k][i][l]=1;
             }
-            
+        }
+        }else{
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    matriz[k][i][j]=0;
+                } 
+            }
         }
     }
 }
-
 int main()
 {
     int l, n, m;
@@ -24,6 +33,11 @@ int main()
     printf("Ingrese el mumero de columnas: ");
     scanf("%d", &m);
     int matrix[l][n][m];
+    if (k==l-1)
+    {
+        
+    }
+    
    
     return 0;
 }
