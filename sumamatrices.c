@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+void asignacion(int n, int m, int matriz[n][m])
+{
+    srand(time(NULL));
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            matriz[i][j] = rand()&101;
+        }
+    }
+}
+
 int main()
 {
     int n, m;
@@ -8,39 +20,15 @@ int main()
     scanf("%d", &n);
     printf("Ingrese el numero de columnas: ");
     scanf("%d", &m);
-    srand(time(NULL));
     int matrix[n][m];
-    printf("Primera matriz \n");
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            matrix[i][j] = rand() % 101;
-            printf("%d\t", matrix[i][j]);
-        }
-        printf("\n");
-    }
+    asignacion(n,m,matrix);
+    printf("Primera matriz %d \n", asignacion);
     int matrix2[n][m];
-    printf("Segunda matriz \n");
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            matrix2[i][j] = rand() % 101;
-            printf("%d\t", matrix2[i][j]);
-        }
-        printf("\n");
-    }
+    asignacion(n,m,matrix2);
+    printf("Segunda matriz %d \n",asignacion);
+    
     int suma[n][m];
-    printf("Suma de primera y segunda matriz \n");
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            suma[i][j] = matrix[i][j] + matrix2[i][j];
-            printf("%d\t", suma[i][j]);
-        }
-        printf("\n");
-    }
+
+
     return 0;
 }
