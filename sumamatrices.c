@@ -8,7 +8,7 @@ void asignacion(int n, int m, int matriz[n][m])
     {
         for (int j = 0; j < m; j++)
         {
-            matriz[i][j] = rand()&101;
+            matriz[i][j] = rand()%101;
         }
     }
 }
@@ -35,19 +35,23 @@ void mostrar(int n,int m,int matriz[n][m])
 }
 int main()
 {
+    srand(time(NULL));
     int n, m;
     printf("Ingrese el numero de filas: ");
     scanf("%d", &n);
     printf("Ingrese el numero de columnas: ");
     scanf("%d", &m);
     int matrix[n][m];
-    asignacion(n,m,matrix);
-    printf("Primera matriz %d \n", asignacion);
     int matrix2[n][m];
-    asignacion(n,m,matrix2);
-    printf("Segunda matriz %d \n",asignacion);
     int suma[n][m];
+    asignacion(n,m,matrix);
+    asignacion(n,m,matrix2);
+    printf("Primera matriz: \n");
+    mostrar(n,m,matrix);
+    printf("Segunda matriz: \n");
+    mostrar(n,m,matrix2);
     resultado(n,m,matrix,matrix2,suma);
-    printf("Resultado de la suma de matrices: %d",resultado);
+    printf("Resultado de la suma de matrices: \n");
+    mostrar(n,m,suma);
     return 0;
 }
